@@ -1,0 +1,62 @@
+#{extends 'main.html' /}
+#{set title:'Cadastrar Formulário' /}
+
+<form action="@{Checklists.salvar()}">
+	fiscalizador
+	<input type="text" name="checklistObj.fiscalizador">
+	condutor
+	<input type="text" name="checklistObj.condutor">
+	data de saída do veículo
+	<input type="date" name="checklistObj.dataSaida">
+	data de chegada do veículo
+	<input type="date" name="checklistObj.dataChegada">
+	
+	<h3>Volante</h3>
+	<select class="form-select" aria-label="Funcionalidade">
+		<option selected>Selecione</option>
+		<option value="Sim">Sim</option>
+		<option value="Nao">Não</option>
+	</select>
+	
+	<h3>Buzina</h3>
+	<select class="form-select" aria-label="Funcionalidade">
+		<option selected>Selecione</option>
+		<option value="Sim">Sim</option>
+		<option value="Nao">Não</option>
+	</select>
+	
+	<h3>Setas</h3>
+	<select class="form-select" aria-label="Funcionalidade">
+		<option selected>Selecione</option>
+		<option value="Sim">Sim</option>
+		<option value="Nao">Não</option>
+	</select>
+	
+	<h3>Marcha</h3>
+	<select class="form-select" aria-label="Funcionalidade">
+		<option selected>Selecione</option>
+		<option value="Sim">Sim</option>
+		<option value="Nao">Não</option>
+	</select>
+	
+	<h3>Embreagem</h3>
+	<select class="form-select" aria-label="Funcionalidade">
+		<option selected>Selecione</option>
+		<option value="Sim">Sim</option>
+		<option value="Nao">Não</option>
+	</select>
+	
+	<h3>Freios</h3>
+	<select class="form-select" aria-label="Funcionalidade">
+		<option selected>Selecione</option>
+		<option value="Sim">Sim</option>
+		<option value="Nao">Não</option>
+	</select>
+	
+	<h3>Acelerador</h3>
+	<select class="form-select" aria-label="Funcionalidade">
+		<option selected>Selecione</option>
+		<option value="Sim">Sim</option>
+		<option value="Nao">Não</option>
+	</select>
+</form>
