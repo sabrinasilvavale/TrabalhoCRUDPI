@@ -1,7 +1,7 @@
 #{extends 'main.html' /}
 #{set title:'Cadastrar Formulário' /}
 
-<form action="@{Checklists.salvar()}">
+<form action="@{Checklists.salvar}">
 	Fiscalizador
 	<input type="text" name="checklistObj.fiscalizador">
 	Condutor
@@ -10,22 +10,23 @@
 	<input type="date" name="checklistObj.dataSaida">
 	Data de chegada do veículo
 	<input type="date" name="checklistObj.dataChegada">
-	
 	<h3>Volante</h3>
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.volante">
-		<option selected>Selecione</option>
+		<option selected >Selecione</option>
 		<option value="Sim">Sim</option>
 		<option value="Nao">Não</option>
 	</select>
 	
-	<h3>Buzina</h3>
+		<h3>Buzina</h3>
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.buzina">
 		<option selected>Selecione</option>
 		<option value="Sim">Sim</option>
 		<option value="Nao">Não</option>
 	</select>
 	
-	<h3>Setas</h3>
+
+
+<h3>Setas</h3>
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.setas">
 		<option selected>Selecione</option>
 		<option value="Sim">Sim</option>
@@ -59,6 +60,8 @@
 		<option value="Sim">Sim</option>
 		<option value="Nao">Não</option>
 	</select>
+
+	
 	<br> <br>
-	<input type="submit" value="Salvar">
+	<input type="submit" name="Salvar">
 </form>
