@@ -2,61 +2,63 @@
 #{set title:'Cadastrar Formulário' /}
 
 <form action="@{Checklists.salvar()}">
-	fiscalizador
+	Fiscalizador
 	<input type="text" name="checklistObj.fiscalizador">
-	condutor
+	Condutor
 	<input type="text" name="checklistObj.condutor">
-	data de saída do veículo
+	Data de saída do veículo
 	<input type="date" name="checklistObj.dataSaida">
-	data de chegada do veículo
+	Data de chegada do veículo
 	<input type="date" name="checklistObj.dataChegada">
 	
 	<h3>Volante</h3>
-	<select class="form-select" aria-label="Funcionalidade">
+	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.volante">
 		<option selected>Selecione</option>
 		<option value="Sim">Sim</option>
 		<option value="Nao">Não</option>
 	</select>
 	
 	<h3>Buzina</h3>
-	<select class="form-select" aria-label="Funcionalidade">
+	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.buzina">
 		<option selected>Selecione</option>
 		<option value="Sim">Sim</option>
 		<option value="Nao">Não</option>
 	</select>
 	
 	<h3>Setas</h3>
-	<select class="form-select" aria-label="Funcionalidade">
+	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.setas">
 		<option selected>Selecione</option>
 		<option value="Sim">Sim</option>
 		<option value="Nao">Não</option>
 	</select>
 	
 	<h3>Marcha</h3>
-	<select class="form-select" aria-label="Funcionalidade">
+	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.marcha">
 		<option selected>Selecione</option>
 		<option value="Sim">Sim</option>
 		<option value="Nao">Não</option>
 	</select>
 	
 	<h3>Embreagem</h3>
-	<select class="form-select" aria-label="Funcionalidade">
+	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.embreagem">
 		<option selected>Selecione</option>
 		<option value="Sim">Sim</option>
 		<option value="Nao">Não</option>
 	</select>
 	
 	<h3>Freios</h3>
-	<select class="form-select" aria-label="Funcionalidade">
+	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.freios">
 		<option selected>Selecione</option>
 		<option value="Sim">Sim</option>
 		<option value="Nao">Não</option>
 	</select>
 	
 	<h3>Acelerador</h3>
-	<select class="form-select" aria-label="Funcionalidade">
+	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.acelerador">
 		<option selected>Selecione</option>
 		<option value="Sim">Sim</option>
 		<option value="Nao">Não</option>
 	</select>
+	<br> <br>
+	<input type="submit" value="Salvar">
 </form>
