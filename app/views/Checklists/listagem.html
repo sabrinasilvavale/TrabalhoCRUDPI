@@ -1,10 +1,21 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+#{extends 'main.html' /}
+#{set title:'Listar' /}
+<h1>Pesquisar :)</h1>
 
-</body>
-</html>
+<form action= "@{Checklists.listagem}">
+
+
+	<input type="text" class="form-control" name="termo" value="${termo}" />
+	<input type="submit" name="buscar" value="Pesquisar">
+	
+	</form>
+	#{list items: checkListObj, as: 'cList'}
+	<ul>
+		<li>
+			${cList.fiscalizador} || ${cList.condutor} || ${cList.dataSaida.format('yyyy-MM-dd')} || ${cList.dataChegada.format('yyyy-MM-dd')} || ${cList.volante}
+			|| ${cList.setas} ||
+			${cList.marcha} || ${cList.embreagem} || ${cList.freios} || ${cList.acelerador} <a href="@{Checklists.remover(cList.id)}">Remover</a>
+			<a href="@{Checklists.editar(cList.id)}">Editar</a>
+		</li>
+	</ul>
+	#{/list} 

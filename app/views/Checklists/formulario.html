@@ -1,67 +1,70 @@
 #{extends 'main.html' /}
 #{set title:'Cadastrar Formulário' /}
 
+
+
 <form action="@{Checklists.salvar}">
-	Fiscalizador
-	<input type="text" name="checklistObj.fiscalizador">
-	Condutor
-	<input type="text" name="checklistObj.condutor">
-	Data de saída do veículo
-	<input type="date" name="checklistObj.dataSaida">
-	Data de chegada do veículo
-	<input type="date" name="checklistObj.dataChegada">
+	<input type="hidden" name="checklistObj.id" value="${checklistEditarObj?.id}">
+	<h3>Fiscalizador</h3>
+	<input type="text" name="checklistObj.fiscalizador" value="${checklistEditarObj?.fiscalizador}">
+	<h3>Condutor</h3>
+	<input type="text" name="checklistObj.condutor" value="${checklistEditarObj?.condutor}">
+	<h3>Data de saída do veículo</h3>
+	<input type="date" name="checklistObj.dataSaida" value ="${checklistEditarObj?.dataSaida?.format('yyyy-MM-dd')}">
+	<h3>Data de chegada do veículo</h3>
+	<input type="date" name="checklistObj.dataChegada" value ="${checklistEditarObj?.dataChegada?.format('yyyy-MM-dd')}">
 	<h3>Volante</h3>
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.volante">
-		<option selected >Selecione</option>
-		<option value="Sim">Sim</option>
-		<option value="Nao">Não</option>
+		<option selected>Selecione</option>
+		<option value="Sim" ${checklistEditarObj?.volante == "Sim" ? 'selected' : ''}>Sim</option>
+		<option value="Nao" ${checklistEditarObj?.volante == "Nao" ? 'selected' : ''}>Não</option>
 	</select>
-	
-		<h3>Buzina</h3>
+
+	<h3>Buzina</h3>
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.buzina">
 		<option selected>Selecione</option>
-		<option value="Sim">Sim</option>
-		<option value="Nao">Não</option>
+		<option value="Sim" ${checklistEditarObj?.buzina == "Sim" ? 'selected' : ''}>Sim</option>
+		<option value="Nao" ${checklistEditarObj?.buzina == "Nao" ? 'selected' : ''}>Não</option>
 	</select>
-	
 
 
-<h3>Setas</h3>
+
+	<h3>Setas</h3>
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.setas">
 		<option selected>Selecione</option>
-		<option value="Sim">Sim</option>
-		<option value="Nao">Não</option>
+		<option value="Sim" ${checklistEditarObj?.setas == "Sim" ? 'selected' : ''}>Sim</option>
+		<option value="Nao" ${checklistEditarObj?.setas == "Nao" ? 'selected' : ''}>Não</option>
 	</select>
-	
+
 	<h3>Marcha</h3>
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.marcha">
 		<option selected>Selecione</option>
-		<option value="Sim">Sim</option>
-		<option value="Nao">Não</option>
+		<option value="Sim" ${checklistEditarObj?.marcha == "Sim" ? 'selected' : ''}>Sim</option>
+		<option value="Nao" ${checklistEditarObj?.marcha == "Nao" ? 'selected' : ''}>Não</option>
 	</select>
-	
+
 	<h3>Embreagem</h3>
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.embreagem">
 		<option selected>Selecione</option>
-		<option value="Sim">Sim</option>
-		<option value="Nao">Não</option>
+		<option value="Sim" ${checklistEditarObj?.embreagem == "Sim" ? 'selected' : ''}>Sim</option>
+		<option value="Nao" ${checklistEditarObj?.embreagem == "Nao " ? 'selected' : ''}>Não</option>
 	</select>
-	
+
 	<h3>Freios</h3>
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.freios">
 		<option selected>Selecione</option>
-		<option value="Sim">Sim</option>
-		<option value="Nao">Não</option>
+		<option value="Sim" ${checklistEditarObj?.freios == "Sim" ? 'selected' : ''}>Sim</option>
+		<option value="Nao" ${checklistEditarObj?.freios == "Nao" ? 'selected' : ''}>Não</option>
 	</select>
-	
+
 	<h3>Acelerador</h3>
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.acelerador">
 		<option selected>Selecione</option>
-		<option value="Sim">Sim</option>
-		<option value="Nao">Não</option>
+		<option value="Sim" ${checklistEditarObj?.acelerador == "Sim" ? 'selected' : ''}>Sim</option>
+		<option value="Nao" ${checklistEditarObj?.acelerador == "Nao" ? 'selected' : ''}>Não</option>
 	</select>
 
-	
+
 	<br> <br>
-	<input type="submit" name="Salvar">
+	<input type="submit" value="${checklistEditarObj ? 'Atualizar' : 'Cadastrar'}">
 </form>

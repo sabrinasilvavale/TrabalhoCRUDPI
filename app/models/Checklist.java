@@ -20,5 +20,6 @@ public class Checklist extends Model{
 	public String embreagem;
 	public String freios;
 	public String acelerador;
+	public String buzina;
 	
 }
