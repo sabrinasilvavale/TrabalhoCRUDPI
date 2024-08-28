@@ -9,11 +9,16 @@
 	<input type="text" name="checklistObj.fiscalizador" value="${checklistEditarObj?.fiscalizador}">
 	<h3>Condutor</h3>
 	<input type="text" name="checklistObj.condutor" value="${checklistEditarObj?.condutor}">
-	<h3>Data de saída do veículo</h3>
-	<input type="date" name="checklistObj.dataSaida" value ="${checklistEditarObj?.dataSaida?.format('yyyy-MM-dd')}">
-	<h3>Data de chegada do veículo</h3>
-	<input type="date" name="checklistObj.dataChegada" value ="${checklistEditarObj?.dataChegada?.format('yyyy-MM-dd')}">
+
+	<h3>Entrada/Saida</h3>
+	<select class="form-select" aria-label="Entrada/Saida" name="checklistObj.tipoChecklist">
+		<option selected>Selecione</option>
+		<option value="SAIDA">Saída</option>
+		<option value="CHEGADA">Chegada</option>
+	</select>
+
 	<h3>Volante</h3>
+	Funcional:
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.volante">
 		<option selected>Selecione</option>
 		<option value="Sim" ${checklistEditarObj?.volante == "Sim" ? 'selected' : ''}>Sim</option>
@@ -21,6 +26,7 @@
 	</select>
 
 	<h3>Buzina</h3>
+	Funcional:
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.buzina">
 		<option selected>Selecione</option>
 		<option value="Sim" ${checklistEditarObj?.buzina == "Sim" ? 'selected' : ''}>Sim</option>
@@ -30,6 +36,7 @@
 
 
 	<h3>Setas</h3>
+	Funcional:
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.setas">
 		<option selected>Selecione</option>
 		<option value="Sim" ${checklistEditarObj?.setas == "Sim" ? 'selected' : ''}>Sim</option>
@@ -37,6 +44,7 @@
 	</select>
 
 	<h3>Marcha</h3>
+	Funcional:
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.marcha">
 		<option selected>Selecione</option>
 		<option value="Sim" ${checklistEditarObj?.marcha == "Sim" ? 'selected' : ''}>Sim</option>
@@ -44,6 +52,7 @@
 	</select>
 
 	<h3>Embreagem</h3>
+	Funcional:
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.embreagem">
 		<option selected>Selecione</option>
 		<option value="Sim" ${checklistEditarObj?.embreagem == "Sim" ? 'selected' : ''}>Sim</option>
@@ -51,6 +60,7 @@
 	</select>
 
 	<h3>Freios</h3>
+	Funcional:
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.freios">
 		<option selected>Selecione</option>
 		<option value="Sim" ${checklistEditarObj?.freios == "Sim" ? 'selected' : ''}>Sim</option>
@@ -58,6 +68,7 @@
 	</select>
 
 	<h3>Acelerador</h3>
+	Funcional:
 	<select class="form-select" aria-label="Funcionalidade" name="checklistObj.acelerador">
 		<option selected>Selecione</option>
 		<option value="Sim" ${checklistEditarObj?.acelerador == "Sim" ? 'selected' : ''}>Sim</option>

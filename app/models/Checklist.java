@@ -5,6 +5,8 @@ package models;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 
 import play.db.jpa.Model;
 
@@ -12,8 +14,7 @@ import play.db.jpa.Model;
 public class Checklist extends Model{
 	public String fiscalizador;
 	public String condutor;
-	public Date dataSaida;
-	public Date dataChegada;
+	public Date dataChecklist;
 	public String volante;
 	public String setas;
 	public String marcha;
@@ -21,5 +22,19 @@ public class Checklist extends Model{
 	public String freios;
 	public String acelerador;
 	public String buzina;
+	
+
+	@Enumerated(EnumType.STRING)
+	public TipoChecklist tipoChecklist;
+	
+	
+	
+	
+	@Enumerated(EnumType.STRING)
+	public ExcluidoStatus exclusaoLogica;
+
+
+
+
 	
 }

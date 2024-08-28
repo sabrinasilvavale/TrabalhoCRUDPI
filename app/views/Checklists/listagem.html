@@ -12,7 +12,7 @@
 	#{list items: checkListObj, as: 'cList'}
 	<ul>
 		<li>
-			${cList.fiscalizador} || ${cList.condutor} || ${cList.dataSaida.format('yyyy-MM-dd')} || ${cList.dataChegada.format('yyyy-MM-dd')} || ${cList.volante}
+			${cList.tipoChecklist} || ${cList.fiscalizador} || ${cList.condutor} || ${cList.dataChecklist.format('yyyy-MM-dd')} || ${cList.volante}
 			|| ${cList.setas} ||
 			${cList.marcha} || ${cList.embreagem} || ${cList.freios} || ${cList.acelerador} <a href="@{Checklists.remover(cList.id)}">Remover</a>
 			<a href="@{Checklists.editar(cList.id)}">Editar</a>
