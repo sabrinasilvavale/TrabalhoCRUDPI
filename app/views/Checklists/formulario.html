@@ -1,8 +1,13 @@
 #{extends 'main.html' /}
 #{set title:'Cadastrar Formulário' /}
 
+<div class="bg-success text-white text-center p-0 fixed-top fs-1">
+	<p>Formulario</p>
+</div>
 
-
+<br>
+<br>
+<br>
 <form action="@{Checklists.salvar}">
 	<input type="hidden" name="checklistObj.id" value="${checklistEditarObj?.id}">
 	<h3>Fiscalizador</h3>
@@ -10,11 +15,11 @@
 	<h3>Condutor</h3>
 	<input type="text" name="checklistObj.condutor" value="${checklistEditarObj?.condutor}">
 
-	<h3>Entrada/Saida</h3>
+	<h3>Tipo da vistoria</h3>
 	<select class="form-select" aria-label="Entrada/Saida" name="checklistObj.tipoChecklist">
 		<option selected>Selecione</option>
-		<option value="SAIDA">Saída</option>
-		<option value="CHEGADA">Chegada</option>
+		<option value="SAIDA">Vistoria de Saída</option>
+		<option value="CHEGADA">Vistoria de Chegada</option>
 	</select>
 
 	<h3>Volante</h3>
