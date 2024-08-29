@@ -5,10 +5,15 @@
 	<p>Formulario</p>
 </div>
 
-<br>
-<br>
-<br>
-<form action="@{Checklists.salvar}">
+<div class= "form-container">
+	<h1>Formulário</h1>
+
+
+
+<form action="@{Checklists.salvar}" method="post">
+	<div class="form-group"></div>
+	
+</div>
 	<input type="hidden" name="checklistObj.id" value="${checklistEditarObj?.id}">
 	<h3>Fiscalizador</h3>
 	<input type="text" name="checklistObj.fiscalizador" value="${checklistEditarObj?.fiscalizador}">
@@ -18,8 +23,8 @@
 	<h3>Tipo da vistoria</h3>
 	<select class="form-select" aria-label="Entrada/Saida" name="checklistObj.tipoChecklist">
 		<option selected>Selecione</option>
-		<option value="SAIDA">Vistoria de Saída</option>
-		<option value="CHEGADA">Vistoria de Chegada</option>
+		<option value="SAIDA" ${checklistEditarObj?.tipoChecklist == models.TipoChecklist.SAIDA ? 'selected' : ''}>Vistoria de Saída</option>
+		<option value="CHEGADA" ${checklistEditarObj?.tipoChecklist == models.TipoChecklist.CHEGADA ? 'selected' : ''}>Vistoria de Chegada</option>
 	</select>
 
 	<h3>Volante</h3>
@@ -82,5 +87,12 @@
 
 
 	<br> <br>
-	<input type="submit" value="${checklistEditarObj ? 'Atualizar' : 'Cadastrar'}">
+	<input class="btn btn-success" type="submit" value="${checklistEditarObj ? 'Atualizar' : 'Cadastrar'}">
+	<input class="btn btn-warning" type="reset" value="Limpar">
+
+	#{if checklistEditarObj == null}
+	<a class="btn btn-info" href="@{Checklists.listagem}">Listagem</a>
+	
+	#{/if}
 </form>
+

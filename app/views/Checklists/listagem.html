@@ -5,19 +5,25 @@
 <form action= "@{Checklists.listagem}">
 
 
-	<input type="text" class="form-control" name="termo" value="${termo}" />
+	<input type="text"  name="termo" value="${termo}" />
 	<input type="submit" name="buscar" value="Pesquisar">
 	
 	</form>
 	#{list items: checkListObj, as: 'cList'}
 	<ul>
 		<li>
+			<!--Tratamento de valor que chega do banco para mostrar ao usuario-->
+			
+			<!--Aqui o IF verifica se o valor que esta vindo no objeto é SAIDA, caso for, ele "entra no IF" e escreve vistoria de saida na tela de listagem-->
 			#{if cList.tipoChecklist == models.TipoChecklist.SAIDA}
 			Vistoria de Saida
 			#{/if}
+
+			<!--Aqui o IF verifica se o valor que esta vindo no objeto é CHEGADA, caso for, ele "entra no IF" e escreve vistoria de Chegada na tela de listagem-->
 			#{if cList.tipoChecklist == models.TipoChecklist.CHEGADA}
 			Vistoria de Chegada
-			#{/if} ||
+			#{/if}
+
 			|| ${cList.fiscalizador} || ${cList.condutor} || ${cList.dataChecklist.format('yyyy-MM-dd')} || ${cList.volante}
 			|| ${cList.setas} ||
 			${cList.marcha} || ${cList.embreagem} || ${cList.freios} || ${cList.acelerador} <a href="@{Checklists.remover(cList.id)}">Remover</a>
@@ -25,3 +31,6 @@
 		</li>
 	</ul>
 	#{/list} 
+
+
+	<a class="btn btn-secondary" href="@{Checklists.Formulario}">Realizar Vistoria</a>
