@@ -7,6 +7,7 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.ManyToOne;
 
 import play.db.jpa.Model;
 
@@ -27,7 +28,14 @@ public class Checklist extends Model{
 	@Enumerated(EnumType.STRING)
 	public TipoChecklist tipoChecklist;
 	
+	@ManyToOne
+	public Carro carro;
 	
+	@ManyToOne
+	public Fiscalizador fiscalizadores;
+	
+	@ManyToOne 
+	public Condutor condutores;
 	
 	
 	@Enumerated(EnumType.STRING)

@@ -33,6 +33,7 @@
 				<th scope="col">Volante</th>
 				<th scope="col">Setas</th>
 				<th scope="col">Marchas</th>
+				<th scope="col">Carro</th>
 				<th scope="col">Embreagem</th>
 				<th scope="col">Freios</th>
 				<th scope="col">Acelerador</th>
@@ -61,10 +62,12 @@
 					<td>${cList.volante}</td> 
 					<td>${cList.setas}</td>
 					<td>${cList.marcha}</td>
+					<td>${cList.carro}</td>
 					<td>${cList.embreagem}</td>
 					<td>${cList.freios} </td> 
 					<td>${cList.acelerador} </td>
 					<td>${cList.buzina} </td>
+					
 				<td><a href="@{Checklists.remover(cList.id)}" class="btn btn-danger">Remover</a>
 	<a href="@{Checklists.editar(cList.id)}" class="btn btn-warning">Editar</a></td>
 				</tr>

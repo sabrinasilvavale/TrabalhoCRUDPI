@@ -4,14 +4,30 @@ import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
+import models.Carro;
 import models.Checklist;
+import models.Condutor;
 import models.ExcluidoStatus;
+import models.Fiscalizador;
 import play.mvc.Controller;
 
 public class Checklists extends Controller {
+	
+	public static void form() {
+		
+		List<Carro> carros = Carro.findAll();
+		render(carros);
+		
+	}
+		
 
 	public static void formulario() {
-		render();
+		List<Carro> carros = Carro.findAll();
+		
+		List<Fiscalizador> fiscalizadores = Fiscalizador.findAll();
+		
+		List<Condutor> condutores = Condutor.findAll();
+		render(carros, condutores, fiscalizadores);
 	}
 
 	public static void salvar(Checklist checklistObj) {
@@ -42,7 +58,10 @@ public class Checklists extends Controller {
 	
 	public static void editar(Long id) {
 		Checklist checklistEditarObj = Checklist.findById(id);
-		renderTemplate("Checklists/formulario.html", checklistEditarObj);
+		List<Carro> carros = Carro.findAll();
+		List<Fiscalizador> fiscalizadores = Fiscalizador.findAll();
+		List<Condutor> condutores = Condutor.findAll();
+		renderTemplate("Checklists/formulario.html", checklistEditarObj, carros, fiscalizadores, condutores);
 		
 		
 	}

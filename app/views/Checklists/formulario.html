@@ -1,128 +1,147 @@
-#{extends 'main.html' /}
-#{set title:'Cadastrar Vistoria' /}
+#{extends 'main.html' /} #{set title:'Cadastrar Vistoria' /}
 
 
 
 
 <form action="@{Checklists.salvar}" method="post">
 	<div class="form-group"></div>
-	
-	<input type="hidden" name="checklistObj.id" value="${checklistEditarObj?.id}">
-	<div class="row">
-		<div class="col">
-			<label class="form-label" ><strong> Fiscalizador</strong></label>
-			<input type="text"  class="form-control"  name="checklistObj.fiscalizador" value="${checklistEditarObj?.fiscalizador}">
-		</div>
 
-		<div class="col">
-			<label class="form-label"><strong> Condutor</strong> </label>
-			<input type="text" class="form-control"  name="checklistObj.condutor" value="${checklistEditarObj?.condutor}">
-		</div>
-	</div>
-	
+	<input type="hidden" name="checklistObj.id"
+		value="${checklistEditarObj?.id}">
 	<div class="row">
 		<div class="col">
-			<label class="form-label"><strong> Tipo da vistoria</strong> </label>
-			<select class="form-select" aria-label="Entrada/Saida" name="checklistObj.tipoChecklist">
-				<option selected></option>
-				<option value="SAIDA" ${checklistEditarObj?.tipoChecklist == models.TipoChecklist.SAIDA ? 'selected' : ''}>Vistoria de Saída</option>
-				<option value="CHEGADA" ${checklistEditarObj?.tipoChecklist == models.TipoChecklist.CHEGADA ? 'selected' : ''}>Vistoria de Chegada</option>
+			<label class="form-label"><strong> Fiscalizador</strong></label> <select
+				class="form-select" name="checklistObj.fiscalizador.id">
+				#{list items:fiscalizadores, as:'f'}
+				<option value="${f.id}" ${f.id==checklistEditarObj?.fiscalizador?.id ? 'selected' : ''} >${f}</option>
+				#{/list}
 			</select>
 		</div>
-	
-	
+
+
+		<div class="col">
+			<label class="form-label"><strong> Condutor</strong> </label> <select
+			class="form-select" name="checklistObj.condutor.id">
+			#{list items:condutores, as:'cond'}
+				<option value="${cond.id}" ${cond.id==checklistEditarObj?.condutor?.id ? 'selected' : ''} >${cond}</option>
+				#{/list} 
+				</select>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<label class="form-label"><strong> Tipo da vistoria</strong>
+			</label> <select class="form-select" aria-label="Entrada/Saida"
+				name="checklistObj.tipoChecklist">
+				<option selected></option>
+				<option value="SAIDA"
+					${checklistEditarObj?.tipoChecklist==models.TipoChecklist.SAIDA?'selected' : ''}>Vistoria
+					de Saída</option>
+				<option value="CHEGADA"
+					${checklistEditarObj?.tipoChecklist==models.TipoChecklist.CHEGADA?'selected' : ''}>Vistoria
+					de Chegada</option>
+			</select>
+		</div>
+
+
 		<div class="col">
 			<label class="form-label"><strong> Volante</strong> </label>
-			/Funcional:
-			<select class="form-select" aria-label="Funcionalidade" name="checklistObj.volante">
+			/Funcional: <select class="form-select" aria-label="Funcionalidade"
+				name="checklistObj.volante">
 				<option selected></option>
-				<option value="Sim" ${checklistEditarObj?.volante == "Sim" ? 'selected' : ''}>Sim</option>
-				<option value="Nao" ${checklistEditarObj?.volante == "Nao" ? 'selected' : ''}>Não</option>
+				<option value="Sim" ${checklistEditarObj?.volante=="Sim" ? 'selected' : ''}>Sim</option>
+				<option value="Nao" ${checklistEditarObj?.volante=="Nao" ? 'selected' : ''}>Não</option>
 			</select>
 		</div>
 	</div>
-	
-	
-			<div class="row">
-				<div class="col">
-				<label class="form-label"><strong> Buzina</strong> </label>
-				/Funcional:
-				<select class="form-select" aria-label="Funcionalidade" name="checklistObj.buzina">
-					<option selected></option>
-					<option value="Sim" ${checklistEditarObj?.buzina == "Sim" ? 'selected' : ''}>Sim</option>
-					<option value="Nao" ${checklistEditarObj?.buzina == "Nao" ? 'selected' : ''}>Não</option>
-				</select>
-				</div>
 
-				<div class="col">
-		<label class="form-label"><strong> Setas </strong> </label>
-		/Funcional:
-		<select class="form-select" aria-label="Funcionalidade" name="checklistObj.setas">
-			<option selected></option>
-			<option value="Sim" ${checklistEditarObj?.setas == "Sim" ? 'selected' : ''}>Sim</option>
-			<option value="Nao" ${checklistEditarObj?.setas == "Nao" ? 'selected' : ''}>Não</option>
-		</select>
-		</div>
+
+	<div class="row">
+		<div class="col">
+			<label class="form-label"><strong> Buzina</strong> </label>
+			/Funcional: <select class="form-select" aria-label="Funcionalidade"
+				name="checklistObj.buzina">
+				<option selected></option>
+				<option value="Sim" ${checklistEditarObj?.buzina=="Sim" ? 'selected' : ''}>Sim</option>
+				<option value="Nao" ${checklistEditarObj?.buzina=="Nao" ? 'selected' : ''}>Não</option>
+			</select>
 		</div>
 
-		<div class="row">
-			<div class="col">
-		<label class="form-label"> <strong>Marcha</strong></label>
-		/Funcional:
-		<select class="form-select" aria-label="Funcionalidade" name="checklistObj.marcha">
-		<option selected></option>
-		<option value="Sim" ${checklistEditarObj?.marcha == "Sim" ? 'selected' : ''}>Sim</option>
-		<option value="Nao" ${checklistEditarObj?.marcha == "Nao" ? 'selected' : ''}>Não</option>
-		</select>
-			</div>
-			<div class="col">
-		<label class="form-label"> <strong>Embreagem </strong></label>
-		/Funcional:
-		<select class="form-select" aria-label="Funcionalidade" name="checklistObj.embreagem">
-		<option selected></option>
-		<option value="Sim" ${checklistEditarObj?.embreagem == "Sim" ? 'selected' : ''}>Sim</option>
-		<option value="Nao" ${checklistEditarObj?.embreagem == "Nao " ? 'selected' : ''}>Não</option>
-		</select>
+		<div class="col">
+			<label class="form-label"><strong> Setas </strong> </label>
+			/Funcional: <select class="form-select" aria-label="Funcionalidade"
+				name="checklistObj.setas">
+				<option selected></option>
+				<option value="Sim" ${checklistEditarObj?.setas=="Sim" ? 'selected' : ''}>Sim</option>
+				<option value="Nao" ${checklistEditarObj?.setas=="Nao" ? 'selected' : ''}>Não</option>
+			</select>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col">
-		<label class="form-label"> <strong>Freios </strong></label>
-		/Funcional:
-		<select class="form-select" aria-label="Funcionalidade" name="checklistObj.freios">
-		<option selected></option>
-		<option value="Sim" ${checklistEditarObj?.freios == "Sim" ? 'selected' : ''}>Sim</option>
-		<option value="Nao" ${checklistEditarObj?.freios == "Nao" ? 'selected' : ''}>Não</option>
-		</select>
+			<label class="form-label"> <strong>Marcha</strong></label>
+			/Funcional: <select class="form-select" aria-label="Funcionalidade"
+				name="checklistObj.marcha">
+				<option selected></option>
+				<option value="Sim" ${checklistEditarObj?.marcha=="Sim" ? 'selected' : ''}>Sim</option>
+				<option value="Nao" ${checklistEditarObj?.marcha=="Nao" ? 'selected' : ''}>Não</option>
+			</select>
+		</div>
+		<div class="col">
+			<label class="form-label"> <strong>Embreagem </strong></label>
+			/Funcional: <select class="form-select" aria-label="Funcionalidade"
+				name="checklistObj.embreagem">
+				<option selected></option>
+				<option value="Sim" ${checklistEditarObj?.embreagem=="Sim" ? 'selected' : ''}>Sim</option>
+				<option value="Nao" ${checklistEditarObj?.embreagem=="Nao " ? 'selected' : ''}>Não</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<label class="form-label"> <strong>Freios </strong></label>
+			/Funcional: <select class="form-select" aria-label="Funcionalidade"
+				name="checklistObj.freios">
+				<option selected></option>
+				<option value="Sim" ${checklistEditarObj?.freios=="Sim" ? 'selected' : ''}>Sim</option>
+				<option value="Nao" ${checklistEditarObj?.freios=="Nao" ? 'selected' : ''}>Não</option>
+			</select>
 		</div>
 
 		<div class="col">
-		<label class="form-label"> <strong>Acelerador</strong></label>
-		/Funcional:
-		<select class="form-select" aria-label="Funcionalidade" name="checklistObj.acelerador">
-		<option selected></option>
-		<option value="Sim" ${checklistEditarObj?.acelerador == "Sim" ? 'selected' : ''}>Sim</option>
-		<option value="Nao" ${checklistEditarObj?.acelerador == "Nao" ? 'selected' : ''}>Não</option>
+			<label class="form-label"> <strong>Acelerador</strong></label>
+			/Funcional: <select class="form-select" aria-label="Funcionalidade"
+				name="checklistObj.acelerador">
+				<option selected></option>
+				<option value="Sim" ${checklistEditarObj?.acelerador=="Sim" ? 'selected' : ''}>Sim</option>
+				<option value="Nao" ${checklistEditarObj?.acelerador=="Nao" ? 'selected' : ''}>Não</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="mb-3">
+		<label class="form-label">Selecione o carro:</label> <select
+			class="form-select" name="checklistObj.carro.id"> #{list
+			items:carros, as:'c'}
+			<option value="${c.id}" ${c.id==checklistEditarObj?.carro?.id ?
+				'selected' : ''} >${c} </option>
+			#{/list}
 		</select>
 	</div>
-	</div>
 
-
-	<br> <br>
-	<input class="btn btn-success" type="submit" value="${checklistEditarObj ? 'Atualizar' : 'Cadastrar'}">
-	<input class="btn btn-secondary" type="reset" value="Limpar">
+	<br> <br> <input class="btn btn-success" type="submit"
+		value="${checklistEditarObj ? 'Atualizar' : 'Cadastrar'}">
 
 
 
 
-	#{if checklistEditarObj == null}
-	<a class="btn btn-success" href="@{Checklists.listagem}">Listagem</a>
-	
-	#{/if}
-	#{if checklistEditarObj != null}
-	<a class="btn btn-success" href="@{Checklists.listagem}">Voltar</a>
-	
-	#{/if}
+
+	#{if checklistEditarObj == null} <a class="btn btn-success"
+		href="@{Checklists.listagem}">Listagem</a> #{/if} #{if
+	checklistEditarObj != null} <a class="btn btn-success"
+		href="@{Checklists.listagem}">Voltar</a> #{/if}
 </form>
 
