@@ -13,6 +13,7 @@ public class Logins extends Controller{
 		String FiscalizadorLogado = Fiscalizador.autenticar(username, senha);
 		if (FiscalizadorLogado == null) {
 			//FUNCIONARIO NAO ENCONTRADO NO BANCO
+			
 		flash.error("Credenciais inválidas");	
 		form();
 		}else {
