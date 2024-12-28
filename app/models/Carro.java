@@ -7,16 +7,8 @@ import play.db.jpa.Model;
 @Entity
 public class Carro extends Model {
 	
-	public String nome;
-	public String placa;
+	public String nomeCarro;
+	public String placaCarro;
+	public String anoCarro;
 	
-	@Override
-	public String toString() {
-		return nome + " (" + placa + ")";
-		
-	}
-	
-	
-	
-
 }

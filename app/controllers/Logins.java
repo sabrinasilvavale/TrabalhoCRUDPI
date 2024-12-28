@@ -9,8 +9,8 @@ public class Logins extends Controller{
 		render();
 	}
 	
-	public static void logar(String username, String senha) {
-		String FiscalizadorLogado = Fiscalizador.autenticar(username, senha);
+	public static void logar(String email, String senha) {
+		String FiscalizadorLogado = Fiscalizador.autenticar(email, senha);
 		if (FiscalizadorLogado == null) {
 			//FUNCIONARIO NAO ENCONTRADO NO BANCO
 		flash.error("Credenciais inválidas");	
@@ -18,7 +18,7 @@ public class Logins extends Controller{
 		}else {
 			//SOMENTE FUNCIONARIOS QUE FORAM ENCONTRADOS NO BANCO
 			session.put("FiscalizadorLogado", FiscalizadorLogado);
-			Checklists.listagem(FiscalizadorLogado);
+			Checklists.formulario(FiscalizadorLogado);
 		}
 	}
 	public static void sair() {

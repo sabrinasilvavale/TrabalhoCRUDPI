@@ -6,19 +6,13 @@ import play.db.jpa.Model;
 
 @Entity
 public class Fiscalizador extends Model{
-		public String nome;
-		public String email;
-		
+		public String nomeFiscalizador;
+		public String emailFiscalizador;
 		public String login;
 		public String senha;
+		public String cpfFiscalizador;
+		public String contatoFiscalizador;
 
-	
-		
-		@Override
-		public String toString() {
-			return nome;
-}
-	
 
 
 public static String autenticar(String login, String senha) {

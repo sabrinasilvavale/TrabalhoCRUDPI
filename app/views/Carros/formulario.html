@@ -1,0 +1,15 @@
+#{extends 'main.html' /}
+#{set title:'Cadastro de Carros' /}
+
+<formform action="@{Carros.salvar}" method="post">
+
+Nome:
+<input type="text" name="carroObj.nomeCarro">
+Placa:
+<input type="text" name="carroObj.placaCarro">
+Ano:
+<input type="text" name="carroObj.anoCarro">
+
+<Button>Enviar</Button>
+
+</form>

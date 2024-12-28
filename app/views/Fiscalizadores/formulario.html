@@ -1,0 +1,21 @@
+#{extends 'main.html' /}
+#{set title:'Cadastro de Fiscalizadores' /}
+
+<form action="@{Fiscalizadores.salvar}" method="post">
+
+Nome:
+<input type="text" name="fiscalizadorObj.nomeFiscalizador"> 
+Login:
+<input type="text" name="fiscalizadorObj.loginFiscalizador">
+Senha:
+<input type="text" name="fiscalizadorObj.senhaFiscalizador">
+CPF:
+<input type="text" name="fiscalizadorObj.cpfFiscalizador">
+Email:
+<input type="text" name="fiscalizadorObj.emailFiscalizador">
+Contato:
+<input type="text" name="fiscalizadorObj.contatoFiscalizador">
+
+<button>Enviar</button>
+
+</form>

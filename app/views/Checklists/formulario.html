@@ -11,7 +11,7 @@
 		value="${checklistEditarObj?.id}">
 	<div class="row">
 		<div class="col">
-			<br/>
+			
 			<label class="form-label"><strong> Fiscalizador</strong></label> <select
 				class="form-select" name="checklistObj.fiscalizador.id">
 				#{list items:fiscalizadores, as:'f'}
@@ -125,7 +125,7 @@
 	</div>
 
 	<div class="mb-3">
-		<label class="form-label">Selecione o carro:</label> <select
+		<label class="form-label"> <strong> Selecione o carro: </strong></label> <select
 			class="form-select" name="checklistObj.carro.id"> #{list
 			items:carros, as:'c'}
 			<option value="${c.id}" ${c.id==checklistEditarObj?.carro?.id ?
