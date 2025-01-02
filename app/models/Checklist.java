@@ -8,13 +8,13 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import play.db.jpa.Model;
 
 @Entity
 public class Checklist extends Model{
-	public String fiscalizador;
-	public String condutor;
+	
 	public Date dataChecklist;
 	public String volante;
 	public String setas;
@@ -41,6 +41,9 @@ public class Checklist extends Model{
 	@Enumerated(EnumType.STRING)
 	public ExcluidoStatus exclusaoLogica;
 
+	public Checklist() {
+		this.exclusaoLogica = ExcluidoStatus.ATIVADO;
+	}
 
 
 

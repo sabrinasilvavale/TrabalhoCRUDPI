@@ -18,7 +18,7 @@ public class Logins extends Controller{
 		}else {
 			//SOMENTE FUNCIONARIOS QUE FORAM ENCONTRADOS NO BANCO
 			session.put("FiscalizadorLogado", FiscalizadorLogado);
-			Checklists.formulario(FiscalizadorLogado);
+			Checklists.formulario();
 		}
 	}
 	public static void sair() {

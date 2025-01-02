@@ -1,6 +1,7 @@
 package controllers;
 
 import java.util.Collections;
+
 import java.util.Date;
 import java.util.List;
 
@@ -10,6 +11,9 @@ import models.Condutor;
 import models.ExcluidoStatus;
 import models.Fiscalizador;
 import play.mvc.Controller;
+import play.mvc.With;
+
+//@With(Seguranca.class)
 
 public class Checklists extends Controller {
 	
@@ -19,8 +23,6 @@ public class Checklists extends Controller {
 		render(carros);
 		
 	}
-		
-
 	public static void formulario() {
 		List<Carro> carros = Carro.findAll();
 		
@@ -31,15 +33,15 @@ public class Checklists extends Controller {
 	}
 
 	public static void salvar(Checklist checklistObj) {
+		checklistObj.save();
 		checklistObj.exclusaoLogica = ExcluidoStatus.ATIVADO;
 		checklistObj.dataChecklist = new Date();
-		checklistObj.save();
 		listagem(null);
 
 	}
 
 	public static void listagem(String termo) {
-		List<Checklist> checkListObj = Collections.EMPTY_LIST;
+		List<Checklist> checkListObj = Checklist.findAll();
 		if (termo == null) {
 			checkListObj = Checklist.find("exclusaoLogica = ?1 ", ExcluidoStatus.ATIVADO).fetch();
 		} else {
