@@ -13,21 +13,22 @@ import models.Fiscalizador;
 import play.mvc.Controller;
 import play.mvc.With;
 
-//@With(Seguranca.class)
+@With(Seguranca.class)
 
 public class Checklists extends Controller {
-	
+
 	public static void form() {
-		
+
 		List<Carro> carros = Carro.findAll();
 		render(carros);
-		
+
 	}
+
 	public static void formulario() {
 		List<Carro> carros = Carro.findAll();
-		
+
 		List<Fiscalizador> fiscalizadores = Fiscalizador.findAll();
-		
+
 		List<Condutor> condutores = Condutor.findAll();
 		render(carros, condutores, fiscalizadores);
 	}
@@ -45,7 +46,8 @@ public class Checklists extends Controller {
 		if (termo == null) {
 			checkListObj = Checklist.find("exclusaoLogica = ?1 ", ExcluidoStatus.ATIVADO).fetch();
 		} else {
-			checkListObj = Checklist.find("lower(fiscalizador) like ?1 AND exclusaoLogica = ?2", "%" + termo.toLowerCase() + "%", ExcluidoStatus.ATIVADO).fetch();
+			checkListObj = Checklist.find("lower(fiscalizador) like ?1 AND exclusaoLogica = ?2",
+					"%" + termo.toLowerCase() + "%", ExcluidoStatus.ATIVADO).fetch();
 		}
 		render(checkListObj, termo);
 
@@ -55,17 +57,16 @@ public class Checklists extends Controller {
 		Checklist checklistRemoveObj = Checklist.findById(id);
 		checklistRemoveObj.exclusaoLogica = ExcluidoStatus.DESATIVADO;
 		checklistRemoveObj.save();
- 		listagem(null);
+		listagem(null);
 	}
-	
+
 	public static void editar(Long id) {
 		Checklist checklistEditarObj = Checklist.findById(id);
 		List<Carro> carros = Carro.findAll();
 		List<Fiscalizador> fiscalizadores = Fiscalizador.findAll();
 		List<Condutor> condutores = Condutor.findAll();
 		renderTemplate("Checklists/formulario.html", checklistEditarObj, carros, fiscalizadores, condutores);
-		
-		
+
 	}
 
 }

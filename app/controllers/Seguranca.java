@@ -7,7 +7,7 @@ public class Seguranca extends Controller{
 		
 		@Before
 		static void verificarAutenticacao() {
-			if(!session.contains("FiscalizadorLogado")){
+			if(!session.contains("fiscalizadorLogado")){
 				flash.error("Por favor realize login");
 				Logins.form();
 			}

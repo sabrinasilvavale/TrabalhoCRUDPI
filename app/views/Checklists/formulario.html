@@ -9,7 +9,7 @@
 			<label class="form-label"><strong> Fiscalizador</strong></label> <select class="form-select"
 				name="checklistObj.fiscalizadores.id">
 				#{list items:fiscalizadores, as:'f'}
-				<option value="${f.id}" ${f.id==checklistEditarObj?.fiscalizador?.id ? 'selected' : '' }>
+				<option value="${f.id}" ${f.id==checklistEditarObj?.fiscalizadores?.id ? 'selected' : '' }>
 					${f.nomeFiscalizador}</option>
 				#{/list}
 			</select>
@@ -18,7 +18,7 @@
 			<label class="form-label"><strong> Condutor</strong> </label> <select class="form-select"
 				name="checklistObj.condutores.id">
 				#{list items:condutores, as:'cond'}
-				<option value="${cond.id}" ${cond.id==checklistEditarObj?.condutor?.id ? 'selected' : '' }>
+				<option value="${cond.id}" ${cond.id==checklistEditarObj?.condutores?.id ? 'selected' : '' }>
 					${cond.nomeCondutor}</option>
 				#{/list}
 			</select>
@@ -85,7 +85,7 @@
 			/Funcional: <select class="form-select" aria-label="Funcionalidade" name="checklistObj.embreagem">
 				<option selected></option>
 				<option value="Sim" ${checklistEditarObj?.embreagem=="Sim" ? 'selected' : '' }>Sim</option>
-				<option value="Nao" ${checklistEditarObj?.embreagem=="Nao " ? 'selected' : '' }>Não</option>
+				<option value="Nao" ${checklistEditarObj?.embreagem=="Nao" ? 'selected' : '' }>Não</option>
 			</select>
 		</div>
 	</div>
@@ -102,16 +102,16 @@
 
 		<div class="col">
 			<label class="form-label"> <strong>Acelerador</strong></label>
-			/Funcional: <select class="form-select" aria-label="Funcionalidade" name="checklistObj.fiscalizadores" name="checklist.condutores">
+			/Funcional: <select class="form-select" aria-label="Funcionalidade" name="checklistObj.acelerador">
 				<option selected></option>
 				<option value="Sim" ${checklistEditarObj?.acelerador=="Sim" ? 'selected' : '' }>Sim</option>
-				<option value="Nao" ${checklistEditarObj?.acelerador=="Nao" ? 'selected' : '' }>Não</option>
+				<option value="Nao" ${checklistEditarObj?.acelerador=="Não" ? 'selected' : '' }>Não</option>
 			</select>
 		</div>
 	</div>
 
 	<div class="mb-3">
-		<label class="form-label"><strong>Data:</strong></label>
+		<label class="form-label"><strong>Data:</label>
 		<input type="date" class="form-control" name="checklistObj.dataChecklist" />
 	</div>
 

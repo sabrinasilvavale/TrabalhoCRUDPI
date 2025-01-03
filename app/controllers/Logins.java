@@ -9,23 +9,23 @@ public class Logins extends Controller{
 		render();
 	}
 	
-	public static void logar(String email, String senha) {
-		String FiscalizadorLogado = Fiscalizador.autenticar(email, senha);
-		if (FiscalizadorLogado == null) {
-			//FUNCIONARIO NAO ENCONTRADO NO BANCO
-		flash.error("Credenciais inválidas");	
-		form();
-		}else {
-			//SOMENTE FUNCIONARIOS QUE FORAM ENCONTRADOS NO BANCO
-			session.put("FiscalizadorLogado", FiscalizadorLogado);
-			Checklists.formulario();
+	public static void logar(String username, String senha) {
+		String fiscalizadorLogado = Fiscalizador.autenticar(username, senha);
+		if (fiscalizadorLogado == null) {
+			//USUARIO NAO ENCONTRADO NO BANCO
+			flash.error("Credenciais inválidas");
+			form();
+		} else {
+			//SOMENTE USUARIO QUE FORAM ENCONTRADOS NO BANCO
+			session.put("fiscalizadorLogado", fiscalizadorLogado);
+		Checklists.formulario();
 		}
 	}
+	
 	public static void sair() {
 		session.clear();
 		flash.success("Você saiu do sistema");
 		form();
 	}
-	}
 
-
+}
