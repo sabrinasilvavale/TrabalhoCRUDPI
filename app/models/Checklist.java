@@ -9,12 +9,14 @@ import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 import play.db.jpa.Model;
 
 @Entity
 public class Checklist extends Model{
-	
+	@Temporal(TemporalType.DATE)
 	public Date dataChecklist;
 	public String volante;
 	public String setas;

@@ -2,19 +2,27 @@
 #{set title:'Cadastro de Condutores' /}
 
 <form action="@{Condutores.salvar}" method="post">
-Nome:
-<input type="text" name="condutorObj.nomeCondutor"> 
-Login:
-<input type="text" name="condutorObj.login">
-Senha:
-<input type="password" name="condutorObj.senha">
-CPF:
-<input type="text" name="condutorObj.cpfCondutor">
-Email:
-<input type="text" name="condutorObj.emailCondutor">
-Contato:
-<input type="text" name="condutorObj.contatoCondutor">
+	
+ Nome:
+<input class="form-control" type="text" placeholder="Nome completo" aria-label="input" name="condutorObj.nomeCondutor">
 
-<button>Cadastrar</button>
+Login:
+<input class="form-control" type="text" placeholder="Username" aria-label="input" name="condutorObj.login">
+
+Senha:
+<input class="form-control" type="password" placeholder="Senha" aria-label="input" name="condutorObj.senha">
+
+CPF:
+<input class="form-control" type="text" placeholder="000.000.000-00" aria-label="input" name="condutorObj.cpfCondutor">
+
+Email:
+<input class="form-control" type="text" placeholder="exemplo@.com" aria-label="input" name="condutorObj.emailCondutor">
+
+Contato:
+<input class="form-control" type="text" placeholder="(DDD)9XXXX-YYYY" aria-label="input" name="condutorObj.contatoCondutor">
+<br>
+        <div class="mb-3">
+		<button type="button" class="btn btn-success">Cadastrar</button>
+		</div>	
 
 </form>

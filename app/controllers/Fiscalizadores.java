@@ -11,6 +11,7 @@ public class Fiscalizadores extends Controller{
 	}
 	public static void salvar(Fiscalizador fiscalizadorObj) {
     	fiscalizadorObj.save();
+    	Logins.form();
 		
 	}
 	

@@ -2,19 +2,22 @@
 
 <p>Login</p>
 
-<form action="@{Logins.logar}">
-	<div class="mb-3">
-		<label class="form-label">Username:</label>
-		<input type="text" class="form-control" name="username" />
+<form action="@{logins.logar}">
+
+	<div class="mb-3 row">
+		<input class="form-control" type="text" placeholder="Username" aria-label="input" name="username">
+		<div class="col-sm-5">
+		</div>
 	</div>
-	
-	<div class="mb-3">
-		<label class="form-label">Senha:</label>
-		<input type="password" class="form-control" name="senha" />
-	</div>
-	
-	<div class="mb-3">
-		<input type="submit" class="btn btn-primary" value="Entrar" />
+	<div class="mb-3 row">
+		<label for="inputPassword" class="col-sm-0 col-form-label">Senha</label>
+		<div class="col-sm-5">
+			<input type="password" class="form-control" id="inputPassword" name="senha">
+		</div>
 	</div>
 
+	<div class="mb-3">
+		<input type="submit" class="btn btn-success"></input>
+		
+		</div>
 </form>
