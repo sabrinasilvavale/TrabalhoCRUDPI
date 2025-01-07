@@ -30,10 +30,20 @@ public class inicializador extends Job{
 			
 			Fiscalizador f1 = new Fiscalizador();
 			f1.nomeFiscalizador = "Dionísio";
+			f1.emailFiscalizador = "dionisio@gmail.com";
+			f1.login = "dio.nisio";
+			f1.senha = "123";
+			f1.cpfFiscalizador = "11122233344";
+			f1.contatoFiscalizador = "(84]994001122";
 			f1.save();
 			
 			Fiscalizador f2 = new Fiscalizador();
 			f2.nomeFiscalizador = "Angelino";
+			f2.emailFiscalizador = "angelino@gmail.com";
+			f2.login = "ange.lino";
+			f2.senha = "456";
+			f2.cpfFiscalizador = "05224775888";
+			f2.contatoFiscalizador = "(84) 99476-8970";
 			f2.save();
 			
 			Condutor cond1 = new Condutor();

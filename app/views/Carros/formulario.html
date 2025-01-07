@@ -3,13 +3,22 @@
 
 <form action="@{Carros.salvar}" method="post">
 
-Nome:
-<input type="text" name="carroObj.nomeCarro">
-Placa:
-<input type="text" name="carroObj.placaCarro">
-Ano:
-<input type="text" name="carroObj.anoCarro">
 
-<Button>Enviar</Button>
+	<strong>Nome:</strong>
+	<input class="form-control" type="text" placeholder="Nome" aria-label="input" name="carroObj.nomeCarro">
+
+	<strong>Placa:</strong>
+	<input class="form-control" type="text" placeholder="Placa" aria-label="input" name="carroObj.placaCarro">
+
+	<strong>Ano:</strong>
+	<input class="form-control" type="text" placeholder="Ano" aria-label="input" name="carroObj.anoCarro">
+
+	<br>
+	<div class="mb-3">
+		<input type="submit" class="btn btn-success">
+		<href="@{Carros.salvar}"></input>
+	</div>
+	
+	<a class="btn btn-secondary" href="@{Checklists.formulario}" class="btn btn-second">Voltar</a>
 
 </form>

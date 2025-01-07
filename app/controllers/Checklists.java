@@ -10,12 +10,20 @@ import models.Checklist;
 import models.Condutor;
 import models.ExcluidoStatus;
 import models.Fiscalizador;
+import play.mvc.Before;
 import play.mvc.Controller;
 import play.mvc.With;
 
 @With(Seguranca.class)
 
+
 public class Checklists extends Controller {
+	
+	@Before
+	public static void logar() {
+		Logins.logar(null, null);
+		formulario();
+	}
 
 	public static void form() {
 
@@ -42,9 +50,9 @@ public class Checklists extends Controller {
 	}
 
 	public static void listagem(String termo) {
-		List<Checklist> checkListObj = Checklist.findAll();
+		List<Checklist> checkListObj = Collections.EMPTY_LIST;
 		if (termo == null) {
-			checkListObj = Checklist.find("exclusaoLogica = ?1 ", ExcluidoStatus.ATIVADO).fetch();
+			checkListObj = Checklist.find("exclusaoLogica = ?1", ExcluidoStatus.ATIVADO).fetch();
 		} else {
 			checkListObj = Checklist.find("lower(fiscalizador) like ?1 AND exclusaoLogica = ?2",
 					"%" + termo.toLowerCase() + "%", ExcluidoStatus.ATIVADO).fetch();

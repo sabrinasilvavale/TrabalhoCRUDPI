@@ -39,7 +39,6 @@ public class Checklist extends Model{
 	@ManyToOne 
 	public Condutor condutores;
 	
-	
 	@Enumerated(EnumType.STRING)
 	public ExcluidoStatus exclusaoLogica;
 

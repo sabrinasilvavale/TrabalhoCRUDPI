@@ -2,21 +2,34 @@
 #{set title:'Cadastro de Fiscalizadores' /}
 
 <form action="@{Fiscalizadores.salvar}" method="post">
+
+	<strong>Nome:</strong>
+	</div><input class="form-control" type="text" placeholder="Nome completo" aria-label="input"
+		name="fiscalizadorObj.nomeFiscalizador">
+		
+	<strong>Login:</strong>
+	<input class="form-control" type="text" placeholder="Username" aria-label="input" name="fiscalizadorObj.login">
+	<strong>Senha:</strong>
 	
- Nome:
- </div><input class="form-control" type="text" placeholder="Nome completo" aria-label="input" name="fiscalizadorObj.nomeFiscalizador">
-Login:
-<input class="form-control" type="text" placeholder="Username" aria-label="input" name="fiscalizadorObj.login">
-Senha:
-<input class="form-control" type="password" placeholder="Senha" aria-label="input" name="fiscalizadorObj.senha">
-CPF:
-<input class="form-control" type="text" placeholder="000.000.000-00" aria-label="input" name="fiscalizadorObj.cpfFiscalizador">
-Email:
-<input class="form-control" type="text" placeholder="exemplo@.com" aria-label="input" name="fiscalizadorObj.emailFiscalizador">
-Contato:
-<input class="form-control" type="text" placeholder="(555)9XXXX-YYYY" aria-label="input" name="fiscalizadorObj.contatoFiscalizador">
-<br>
-        <div class="mb-3">
-		<input type="submit" class="btn btn-success"><href="@{Fiscalizadores.salvar}"></input>
-		</div>
+	<input class="form-control" type="password" placeholder="Senha" aria-label="input" name="fiscalizadorObj.senha">
+	<strong>CPF:</strong>
+	
+	<input class="form-control" type="text" placeholder="000.000.000-00" aria-label="input"
+		name="fiscalizadorObj.cpfFiscalizador">
+		
+	<strong>Email:</strong>
+	<input class="form-control" type="text" placeholder="exemplo@.com" aria-label="input"
+		name="fiscalizadorObj.emailFiscalizador">
+		
+	<strong>Contato:</strong>
+	<input class="form-control" type="text" placeholder="(555)9XXXX-YYYY" aria-label="input"
+		name="fiscalizadorObj.contatoFiscalizador">
+		
+	<br>
+	<div class="mb-3">
+		<input type="submit" class="btn btn-success">
+		<href="@{Fiscalizadores.salvar}"></input>
+	</div>
+	
+	<a class="btn btn-secondary" href="@{Checklists.formulario}" class="btn btn-second">Voltar</a>
 </form>

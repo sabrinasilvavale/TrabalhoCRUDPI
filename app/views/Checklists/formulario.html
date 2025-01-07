@@ -102,19 +102,22 @@
 
 		<div class="col">
 			<label class="form-label"> <strong>Acelerador</strong></label>
-			/Funcional: <select class="form-select" aria-label="Funcionalidade" name="checklistObj.acelerador">
+			/Funcional:
+			<select class="form-select" aria-label="Funcionalidade" name="checklistObj.acelerador"">
 				<option selected></option>
-				<option value="Sim" ${checklistEditarObj?.acelerador=="Sim" ? 'selected' : '' }>Sim</option>
-				<option value="Nao" ${checklistEditarObj?.acelerador=="Não" ? 'selected' : '' }>Não</option>
+				<option value=" Sim" ${checklistEditarObj?.acelerador=="Sim" ? 'selected' : '' }>Sim</option>
+				<option value="Nao" ${checklistEditarObj?.acelerador=="Nao" ? 'selected' : '' }>Não</option>
 			</select>
 		</div>
 	</div>
 
 	<div class="mb-3">
-		<label class="form-label"><strong>Data:</label>
-		<input type="date" class="form-control" name="checklistObj.dataChecklist" />
+		<label class="form-label"><strong>Data:</strong></label>
+		<input type="date" name="checklistObj.dataChecklist" class="form-control"
+			value="${checklistEditarObj?.dataChecklist?.format('yyyy-MM-dd')}" />
+		
+		
 	</div>
-
 	<div class="mb-3">
 		<label class="form-label"> <strong> Selecione o carro: </strong></label> <select class="form-select"
 			name="checklistObj.carro.id"> #{list
@@ -124,12 +127,13 @@
 		</select>
 	</div>
 
-	<br> <br> <input class="btn btn-success" type="submit" value="${checklistEditarObj ? 'Atualizar' : 'Cadastrar'}">
-
-
-
+	<input class="btn btn-success" type="submit" value="${checklistEditarObj ? 'Atualizar' : 'Cadastrar'}">
 
 
 	#{if checklistEditarObj == null} <a class="btn btn-success" href="@{Checklists.listagem}">Listagem</a> #{/if} #{if
 	checklistEditarObj != null} <a class="btn btn-success" href="@{Checklists.listagem}">Voltar</a> #{/if}
+	
+	<a class="btn btn-secondary" href="@{Fiscalizadores.formulario}" class="btn btn-second">Cadastrar novo fiscalizador</a>
+	<a class="btn btn-secondary" href="@{Condutores.formulario}" class="btn btn-second">Cadastrar novo condutor</a>
+	<a class="btn btn-secondary" href="@{Carros.formulario}" class="btn btn-second">Cadastrar novo carro </a>
 </form>
