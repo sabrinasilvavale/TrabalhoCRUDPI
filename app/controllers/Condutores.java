@@ -9,7 +9,7 @@ public class Condutores extends Controller{
 	@Before
 	public static void logar() {
 		Logins.logar(null, null);
-		formulario();
+		Condutores.formulario();
 	}
 	
 	public static void formulario() {

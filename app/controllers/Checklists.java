@@ -19,7 +19,7 @@ import play.mvc.With;
 
 public class Checklists extends Controller {
 	
-	@Before
+	
 	public static void logar() {
 		Logins.logar(null, null);
 		formulario();
